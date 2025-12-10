@@ -44,6 +44,18 @@
     .align-right {
         text-align: right;
     }
+
+    .hedding-underline {
+        text-decoration: underline;
+    }
+
+    .hedding-hr {
+        border: 0;
+        height: 5px;
+        width: 90%;
+        background: #ffffff;
+        margin-left: 0px;
+    }
 </style>
 <style class: buttonStyle>
     button {
@@ -63,12 +75,24 @@
         background-color: #4a4758;
     }
 </style>
-<body>
+<body class="font-family font-size font-color color-scheme">
     <h1 class="align-center">ふりするフリスル</h1>
     <h2 class="align-center">HEW用ゲーム紹介ページ</h2>
-    <div class="font-family font-size font-color">
-        <p>ここはふりするフリスルのウェブサイトです。</p>
+
+    <h2 class="align-left">ゲーム紹介動画</h2>
+    <hr class="hedding-hr">
+    <div class="align-left">
+        <video width="640" height="360" controls>
+            <!-- <source src="game_intro.mp4" type="video/mp4"> -->
+        </video>
     </div>
+
+    <h2 class="align-left">キャラクター紹介</h2>
+    <hr class="hedding-hr">
+    <div class="align-left">
+        <img src="furisuru_prof.png" alt="ふりする" width="400">
+    </div>
+
 
     <!-- 移動用ボタン -->
     <button class="buttonStyle" onclick="navigateToMippou()">開発秘話</button>
