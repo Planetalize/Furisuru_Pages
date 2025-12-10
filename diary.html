@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>ふりするフリスル</title>
+</head>
+<style>
+    body {
+        background-color: #18222b;
+        margin: 20px;
+    }
+    .color-scheme {
+        color: #555555;
+    }
+</style>
+<style class: defaultStyle>
+    .font-family {
+        font-family: 'Arial', sans-serif;
+    }
+    .font-size {
+        font-size: 16px;
+    }
+    .font-color {
+        color: #ffffff;
+    }
+</style>
+<style class: headingStyle>
+    h1 {
+        font-size: 36px;
+        color: #ffffff;
+    }
+    h2 {
+        font-size: 28px;
+        color: #ffffff;
+    }
+</style>
+<style class: buttonStyle>
+    button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+<body>
+  <h1>MIPPOU</h1>
+  <h2>-MetaImPulse 日報</h2>
+  <p class="font-family font-size font-color">ここはMetaImPulseの日報ページです。</p>
+  <!-- 移動用ボタン -->
+  <button class="buttonStyle" onclick="navigateToFurisuru()">トップページへ移動</button>
+</body>
+<script>
+    // ページ移動
+    function navigateToFurisuru() {
+        window.location.href = "index.html";
+    }
+</script>
+</html>
