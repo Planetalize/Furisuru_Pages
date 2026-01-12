@@ -6,6 +6,43 @@
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <title>ふりするフリスル</title>
 </head>
+<style>
+    body {
+        background-color: #1c122e;
+        font-family: 'Arial', sans-serif;
+        margin: 20px;
+    }
+    .color-scheme {
+        color: #555555;
+    }
+</style>
+<style class: sideStyle>
+    .sidebar {
+        width: 200px;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #2c223e;
+        padding-top: 20px;
+    }
+    .sidebar a {
+        padding: 10px 15px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #ffffff;
+        display: block;
+    }
+    .sidebar a:hover {
+        background-color: #575060;
+    }
+</style>
+<style class: mainStyle>
+    .main-content {
+        margin-left: 200px;
+        padding: 20px;
+    }
+</style>
 <style class: headingStyle>
     h1 {
         font-size: 36px;
@@ -33,7 +70,7 @@
     .hedding-hr {
         border: 0;
         height: 5px;
-        width: 90%;
+        width: 100%;
         background: #ffffff;
         margin-left: 0px;
     }
@@ -56,9 +93,14 @@
         background-color: #4a4758;
     }
 </style>
-<body class="font-default">
-    <h1 class="align-center">ふりするフリスル</h1>
-    <h2 class="align-center">HEW用ゲーム紹介ページ</h2>
+<body>
+    <div class="sidebar">
+        <a href="index.html">ホーム</a>
+        <a href="about.html">このサイトについて</a>
+    </div>
+    <div class="main-content">
+    <h1 class="align-left">ふりするフリスル</h1>
+    <h2 class="align-left">HEW用ゲーム紹介ページ</h2>
     <hr class="hedding-hr">
     <p>もちもち</p>
 
@@ -79,6 +121,7 @@
 
     <!-- 移動用ボタン -->
     <button class="buttonStyle" onclick="navigateToMippou()">開発秘話</button>
+    </div>
 </body>
 <script>
     // ページ移動
