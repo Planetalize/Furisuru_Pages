@@ -164,6 +164,43 @@ img{ max-width:100%; height:auto; display:block; }
   border-top:1px solid var(--border);
 }
 
+/* スクロール誘導（ヒーロー下の矢印） */
+.scroll-hint{
+  position:absolute;
+  left:50%;
+  bottom:12px;
+  transform:translateX(-50%);
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:rgba(12,8,18,0.28);
+  backdrop-filter: blur(8px);
+  z-index:2; /* hero__bg より前に */
+}
+
+.scroll-hint__chev{
+  width:10px;
+  height:10px;
+  border-right:2px solid rgba(255,255,255,0.85);
+  border-bottom:2px solid rgba(255,255,255,0.85);
+  transform: rotate(45deg);
+  margin-top:-4px;
+  animation: scrollHint 1.2s ease-in-out infinite;
+}
+
+@keyframes scrollHint{
+  0%,100%{ opacity:0.6; margin-top:-4px; }
+  50%{ opacity:1; margin-top:2px; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .scroll-hint__chev{ animation:none; }
+}
+
+
 /* スマホ最適化 */
 @media (max-width: 860px){
   /* 既存 */
@@ -216,4 +253,33 @@ img{ max-width:100%; height:auto; display:block; }
     min-width: 0;
     padding: 14px 16px;
   }
+  
+  .section{ padding: 32px 0; }
+  
+  .feature h3{
+    margin: 0;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+  }
+  .feature p{
+    margin: 6px 0 0;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+    /* アイコンとテキストを横並びにして視線誘導を安定させる */
+  .feature{
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    column-gap: 10px;
+    align-items: start;
+
+    /* 入れ子感を弱めたい場合（どちらか選ぶ） */
+    background: rgba(255,255,255,0.03);
+  }
+  .feature__icon{
+    margin: 2px 0 0;
+    line-height: 1;
+  }
+
 }
