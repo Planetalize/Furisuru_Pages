@@ -205,7 +205,9 @@ img{ max-width:100%; height:auto; display:block; }
   }
 
   .btn{
-    width: 100%;
+    width: 40%;
+    min-width: 200px;
+    padding: 10px 14px;
   }
 
   .hero__art img{
