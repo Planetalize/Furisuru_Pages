@@ -6,136 +6,130 @@
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <title>ふりするフリスル</title>
 </head>
-<style>
-    body {
-        background-color: #1c122e;
-        font-family: 'Arial', sans-serif;
-        margin: 20px;
-    }
-    .color-scheme {
-        color: #555555;
-    }
-</style>
-<style class: sideStyle>
-    .sidebar {
-        width: 200px;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: #2c223e;
-        padding-top: 20px;
-    }
-    .sidebar a {
-        padding: 10px 15px;
-        text-decoration: none;
-        font-size: 18px;
-        color: #ffffff;
-        display: block;
-    }
-    .sidebar a:hover {
-        background-color: #575060;
-    }
-</style>
-<style class: mainStyle>
-    .main-content {
-        margin-left: 200px;
-        padding: 20px;
-    }
-</style>
-<style class: headingStyle>
-    h1 {
-        font-size: 36px;
-        color: #ffffff;
-    }
-    h2 {
-        font-size: 28px;
-        color: #ffffff;
-    }
-
-    .align-center {
-        text-align: center;
-    }
-    .align-left {
-        text-align: left;
-    }
-    .align-right {
-        text-align: right;
-    }
-
-    .hedding-underline {
-        text-decoration: underline;
-    }
-
-    .hedding-hr {
-        border: 0;
-        height: 5px;
-        width: 100%;
-        background: #ffffff;
-        margin-left: 0px;
-    }
-</style>
-<style class: buttonStyle>
-    button {
-        background-color: #5a5668;
-        border: none;
-        color: white;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 8px;
-    }
-    button:hover {
-        background-color: #4a4758;
-    }
-</style>
 <body>
-    <div class="sidebar">
-        <a href="index.html">ホーム</a>
-        <a href="about.html">このサイトについて</a>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="#top">ふりするフリスル</a>
+      <nav class="nav">
+        <a href="#about">ゲーム紹介</a>
+        <a href="#movie">PV</a>
+        <a href="#chara">キャラクター</a>
+        <a href="#access">会場アクセス</a>
+      </nav>
     </div>
-    <div class="main-content">
-    <h1 class="align-left">ふりするフリスル</h1>
-    <h2 class="align-left">HEW用ゲーム紹介ページ</h2>
-    <hr class="hedding-hr">
-    <p>もちもち</p>
+  </header>
 
-    <h2 class="align-left">ゲーム紹介動画</h2>
-    <hr class="hedding-hr">
-    <div class="align-left">
-        <video width="640" height="360" controls>
-            <!-- <source src="game_intro.mp4" type="video/mp4"> -->
-        </video>
-    </div>
+  <main id="top">
+    <!-- ヒーロー -->
+    <section class="hero">
+      <div class="hero__bg"></div>
+      <div class="hero__inner">
+        <div class="hero__text">
+          <h1 class="title">ふりするフリスル</h1>
+          <p class="catch">もちもち爽快バウンドアクション</p>
+          <p class="subcatch">飛んでふりして城を抜け出せ！</p>
 
-    <h2 class="align-left">キャラクター紹介</h2>
-    <hr class="hedding-hr">
-    <div class="align-left">
-        <img src="furisuru_prof.png" alt="ふりする" width="400">
-    </div>
+          <div class="cta">
+            <a class="btn btn--primary" href="#movie">PVを見る</a>
+            <a class="btn btn--ghost" href="#about">ゲーム紹介</a>
+          </div>
+        </div>
 
+        <div class="hero__art">
+          <img src="furisuru_prof.png" alt="キャラクター" />
+        </div>
+      </div>
+    </section>
 
-    <!-- 移動用ボタン -->
-    <button class="buttonStyle" onclick="navigateToMippou()">開発秘話</button>
-    </div>
+    <!-- ゲーム紹介 -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section__title">ゲーム紹介</h2>
+
+        <div class="card">
+          <p class="lead">
+            スマホを“振る/傾ける”操作で、足場やギミックが変化するアクション（またはパズル）。
+          </p>
+
+          <div class="features">
+            <div class="feature">
+              <div class="feature__icon">◆</div>
+              <h3>傾け操作</h3>
+              <p>角度で世界が変化する。</p>
+            </div>
+            <div class="feature">
+              <div class="feature__icon">◆</div>
+              <h3>静かな探索</h3>
+              <p>暗い森と城、少し不穏。</p>
+            </div>
+            <div class="feature">
+              <div class="feature__icon">◆</div>
+              <h3>短時間で遊べる</h3>
+              <p>小規模でも体験が伝わる。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PV -->
+    <section id="movie" class="section">
+      <div class="container">
+        <h2 class="section__title">ゲーム紹介動画</h2>
+        <div class="card">
+          <div class="video">
+            <video controls>
+              <!-- <source src="game_intro.mp4" type="video/mp4"> -->
+            </video>
+          </div>
+          <p class="note">操作と雰囲気が伝わる短いPVが最強。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- キャラクター -->
+    <section id="chara" class="section">
+      <div class="container">
+        <h2 class="section__title">キャラクター</h2>
+
+        <div class="card split">
+          <div class="split__media">
+            <img src="furisuru_prof.png" alt="ふりする" />
+          </div>
+          <div class="split__text">
+            <h3>ふりする</h3>
+            <p>森で迷子になった魔女。道具と“ふり”で切り抜ける。</p>
+            <p class="note">ここに性格・目的・関係性を1〜2行で。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 会場アクセス -->
+    <section id="access" class="section">
+      <div class="container">
+        <h2 class="section__title">会場案内</h2>
+
+        <div class="card">
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© ふりするフリスル</p>
+      </div>
+    </footer>
+  </main>
 </body>
-<script>
-    // ページ移動
-    function navigateToMippou() {
-        window.location.href = "diary.html";
-    }
-</script>
+
 </html>
 
 <!-- メモ書き
  【実装予定】
  1.キャラ画像
  2.タイトルロゴ
- 3.タイトルロゴのアニメーション
+ 3.タイトルロゴのアニメーション（フェードイン、スライドイン等）
  4.背景画像
  5.スクロールでの背景移動
  6.動画の埋め込み
@@ -143,5 +137,5 @@
  8.リンクボタンの追加
     9.レスポンシブデザイン対応
     10.フォントのカスタマイズ
-
+ 11.画面下側にナビゲーションバー追加
 -->
