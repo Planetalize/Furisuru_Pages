@@ -163,10 +163,47 @@ img{ max-width:100%; height:auto; display:block; }
 
 /* スマホ最適化 */
 @media (max-width: 860px){
+  /* 既存 */
   .hero__inner{ grid-template-columns: 1fr; }
   .title{ font-size:34px; }
   .features{ grid-template-columns: 1fr; }
   .split{ grid-template-columns: 1fr; }
   .cards3{ grid-template-columns: 1fr; }
   .nav{ display:none; }
+
+  /* 追加：ヒーローを目立たせる */
+  .hero{
+    padding: 28px 0 18px;      /* 上下を締める（画面内で密度UP） */
+  }
+
+  .hero__text{
+    text-align: left;          /* 好みで center でもOK */
+  }
+
+  .title{
+    font-size: 38px;           /* もう一段強くする */
+    line-height: 1.1;
+  }
+
+  .catch{
+    font-size: 16px;
+  }
+
+  .subcatch{
+    font-size: 14px;
+  }
+
+  .cta{
+    gap: 10px;
+  }
+
+  .btn{
+    width: 100%;               /* スマホでは押しやすくする */
+    padding: 14px 16px;
+  }
+
+  .hero__art img{
+    max-width: 320px;          /* 画像が暴れないように上限 */
+    margin: 10px auto 0;       /* 画像は中央寄せで“見せ場”に */
+  }
 }
