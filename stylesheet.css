@@ -100,7 +100,9 @@ img{ max-width:100%; height:auto; display:block; }
 .btn--ghost:hover,
 .btn--primary:hover{ filter:brightness(1.08); }
 
-.section{ padding:32px 0; }
+.section{
+  scroll-margin-top: 72px;
+}
 .section__title{
   font-size:22px;
   margin:0 0 14px;
@@ -173,7 +175,12 @@ img{ max-width:100%; height:auto; display:block; }
 
   /* 追加：ヒーローを目立たせる */
   .hero{
-    padding: 28px 0 18px;      /* 上下を締める（画面内で密度UP） */
+    padding: 22px 0 14px;
+  }
+
+  .hero__art img{
+    width: min(78vw, 320px);
+    margin: 8px auto 0;
   }
 
   .hero__text{
@@ -194,12 +201,11 @@ img{ max-width:100%; height:auto; display:block; }
   }
 
   .cta{
-    gap: 10px;
+    flex-direction: column;
   }
 
   .btn{
-    width: 100%;               /* スマホでは押しやすくする */
-    padding: 14px 16px;
+    width: 100%;
   }
 
   .hero__art img{
