@@ -167,7 +167,6 @@ img{ max-width:100%; height:auto; display:block; }
 /* スマホ最適化 */
 @media (max-width: 860px){
   /* 既存 */
-  .hero__inner{ grid-template-columns: 1fr; }
   .title{ font-size:34px; }
   .features{ grid-template-columns: 1fr; }
   .split{ grid-template-columns: 1fr; }
@@ -177,6 +176,11 @@ img{ max-width:100%; height:auto; display:block; }
   /* 追加：ヒーローを目立たせる */
   .hero{
     padding: 22px 0 14px;
+  }
+
+  .hero__inner{ 
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .hero__art img{
@@ -202,17 +206,14 @@ img{ max-width:100%; height:auto; display:block; }
   }
 
   .cta{
+    display: flex;
     flex-direction: column;
+    gap: 12px;
   }
 
   .btn{
-    width: 40%;
-    min-width: 200px;
-    padding: 10px 14px;
-  }
-
-  .hero__art img{
-    max-width: 320px;          /* 画像が暴れないように上限 */
-    margin: 10px auto 0;       /* 画像は中央寄せで“見せ場”に */
+    width: 100%;
+    min-width: 0;
+    padding: 14px 16px;
   }
 }
