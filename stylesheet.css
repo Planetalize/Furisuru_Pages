@@ -199,6 +199,10 @@ img{ max-width:100%; height:auto; display:block; }
 @media (prefers-reduced-motion: reduce){
   .scroll-hint__chev{ animation:none; }
 }
+@media (prefers-reduced-motion: no-preference){
+  html{ scroll-behavior: smooth; }
+}
+
 
 
 /* スマホ最適化 */
@@ -256,22 +260,11 @@ img{ max-width:100%; height:auto; display:block; }
   .section{ padding: 32px 0; }
   
   .feature{
-    display: grid;
-    grid-template-columns: 18px 1fr;
-    column-gap: 10px;
-    align-items: start;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
   }
-
-  /* 追加：文字要素は2列目へ */
-  .feature h3,
-  .feature p{
-    grid-column: 2;
-  }
-
-  /* 任意：◆を2行分またぐ（見た目が安定） */
-  .feature__icon{
-    grid-row: 1 / span 2;
-    margin: 2px 0 0;
-    line-height: 1;
-  }
+  .feature__icon{ margin-top: 2px; line-height: 1; }
+  .feature__body h3{ margin: 0; }
+  .feature__body p{ margin: 6px 0 0; }
 }
