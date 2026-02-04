@@ -261,11 +261,6 @@ img{ max-width:100%; height:auto; display:block; }
     font-size: 18px;
     letter-spacing: 0.02em;
   }
-  .feature p{
-    margin: 6px 0 0;
-    color: var(--muted);
-    line-height: 1.7;
-  }
 
     /* アイコンとテキストを横並びにして視線誘導を安定させる */
   .feature{
