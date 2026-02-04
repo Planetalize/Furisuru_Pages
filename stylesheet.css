@@ -102,6 +102,7 @@ img{ max-width:100%; height:auto; display:block; }
 
 .section{
   scroll-margin-top: 72px;
+  padding:48px 0 ;
 }
 .section__title{
   font-size:22px;
@@ -114,7 +115,7 @@ img{ max-width:100%; height:auto; display:block; }
   border:1px solid var(--border);
   border-radius:18px;
   padding:16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.35);
 }
 .card--link:hover{
   background:rgba(255,255,255,0.06);
