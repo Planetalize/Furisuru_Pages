@@ -25,7 +25,16 @@
 *{ box-sizing:border-box; }
 html,body{ margin:0; padding:0; }
 body{
-  background:var(--bg);
+  color:#fff;
+  background:
+    radial-gradient(1200px 800px at 50% -10%, rgba(180,120,255,0.25), transparent 25%),
+    linear-gradient(180deg, rgba(10,6,20,0.85), rgba(10,6,20,0.5)),
+    url("bg_forest.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* スマホだと重い場合あり */
+
   color:var(--text);
   font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans JP", sans-serif;
 }
@@ -104,10 +113,32 @@ img{ max-width:100%; height:auto; display:block; }
   scroll-margin-top: 72px;
   padding:48px 0 ;
 }
-.section__title{
-  font-size:22px;
-  margin:0 0 14px;
-  letter-spacing:0.06em;
+
+.section-title{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  margin: 28px 0 14px;
+  font-size: 28px;
+  letter-spacing: 0.08em;
+}
+.section-title span{
+  position:relative;
+  padding: 18px 24px;
+  z-index:1;
+}
+.section-title::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:min(680px, 92vw);
+  height:78px;
+  background:url("frame_section.svg") center/contain no-repeat;
+  opacity:0.95;
+  pointer-events:none;
 }
 
 .card{
@@ -116,11 +147,27 @@ img{ max-width:100%; height:auto; display:block; }
   border-radius:18px;
   padding:16px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.35);
+position:relative;
+  overflow:hidden;
 }
 .card--link:hover{
   background:rgba(255,255,255,0.06);
   border-color:rgba(212,140,255,0.35);
 }
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(600px 260px at 20% 0%, rgba(200,140,255,0.16), transparent 60%),
+    url("bg_forest.webp") center/cover no-repeat;
+  opacity:0.35;
+  filter: blur(0px) saturate(1.1);
+  pointer-events:none;
+  z-index:0;
+}
+.card > *{ position:relative; z-index:1; }
 
 .lead{ margin:0 0 14px; color:var(--muted); line-height:1.8; }
 
@@ -149,6 +196,9 @@ img{ max-width:100%; height:auto; display:block; }
   grid-template-columns: 0.9fr 1.1fr;
   gap:14px;
   align-items:center;
+}
+.split__media img{
+  border-radius: 14px;
 }
 .note{ margin:12px 0 0; color:var(--muted); font-size:14px; }
 
@@ -212,6 +262,7 @@ img{ max-width:100%; height:auto; display:block; }
   .split{ grid-template-columns: 1fr; }
   .cards3{ grid-template-columns: 1fr; }
   .nav{ display:none; }
+  body{ background-attachment: scroll; }
 
   /* 追加：ヒーローを目立たせる */
   .hero{
@@ -257,6 +308,16 @@ img{ max-width:100%; height:auto; display:block; }
     padding: 14px 16px;
   }
   
+  #about .features{ gap: 0; }
+  #about .feature{
+    border: 0;
+    background: transparent;
+    padding: 14px 0;
+  }
+  #about .feature + .feature{
+    border-top: 1px solid rgba(255,255,255,0.10);
+  }
+  
   .section{ padding: 32px 0; }
   
   .feature{
@@ -265,6 +326,13 @@ img{ max-width:100%; height:auto; display:block; }
     align-items: flex-start;
   }
   .feature__icon{ margin-top: 2px; line-height: 1; }
-  .feature__body h3{ margin: 0; }
-  .feature__body p{ margin: 6px 0 0; }
+  
+  .feature__body h3{ 
+    font-size:18px; letter-spacing:0.02em; 
+    margin: 0;
+  }
+  .feature__body p{ 
+    color: var(--muted); line-height: 1.7; 
+    margin: 6px 0 0;
+  }
 }
