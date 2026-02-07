@@ -29,7 +29,7 @@ body{
   background:
     radial-gradient(1200px 800px at 50% -10%, rgba(180,120,255,0.25), transparent 25%),
     linear-gradient(180deg, rgba(10,6,20,0.85), rgba(10,6,20,0.5)),
-    url("bg_forest.webp");
+    url("bg.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -162,7 +162,7 @@ position:relative;
   inset:0;
   background:
     radial-gradient(600px 260px at 20% 0%, rgba(200,140,255,0.16), transparent 60%),
-    url("bg_forest.webp") center/cover no-repeat;
+    url("bg.webp") center/cover no-repeat;
   opacity:0.35;
   filter: blur(0px) saturate(1.1);
   pointer-events:none;
