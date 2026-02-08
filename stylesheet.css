@@ -97,7 +97,7 @@ img{ max-width:100%; height:auto; display:block; }
 
 .hero{
   position:relative;
-  padding:56px 0 28px;
+  padding:56px 0 640px;
   overflow:hidden;
 }
 .hero__bg{
@@ -349,7 +349,7 @@ position:relative;
 
   /* 追加：ヒーローを目立たせる */
   .hero{
-    padding: 22px 0 14px;
+    padding: 22px 0 20px;
   }
 
   .hero__inner{ 
