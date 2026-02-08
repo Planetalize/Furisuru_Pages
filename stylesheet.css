@@ -26,10 +26,7 @@
 html,body{ margin:0; padding:0; }
 body{
   color:#fff;
-  background:
-    radial-gradient(1200px 800px at 50% -10%, rgba(180,120,255,0.25), transparent 25%),
-    linear-gradient(180deg, rgba(10,6,20,0.85), rgba(10,6,20,0.5)),
-    url("bg.webp");
+  background-color: #7A2522;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -42,6 +39,36 @@ body{
 
 a{ color:inherit; text-decoration:none; }
 img{ max-width:100%; height:auto; display:block; }
+
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.brand__logo{
+  height: 24px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,.35));
+}
+
+.title__logo{
+  width: min(92vw, 560px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 12px 28px rgba(0,0,0,.40));
+}
+
+/* brand が画像でも崩れないように */
+.brand{ display:flex; align-items:center; gap:10px; font-weight: 700; letter-spacing: .08em; }
+
 
 .container{
   width:min(980px, 92vw);
@@ -76,10 +103,11 @@ img{ max-width:100%; height:auto; display:block; }
 .hero__bg{
   position:absolute;
   inset:0;
-  background:
-    radial-gradient(900px 380px at 25% 30%, rgba(212,140,255,0.20), transparent 60%),
-    radial-gradient(700px 340px at 80% 20%, rgba(255,156,207,0.16), transparent 60%),
-    linear-gradient(180deg, rgba(0,0,0,0.25), transparent 30%, rgba(0,0,0,0.35));
+    background:
+    radial-gradient(1200px 520px at 12% 8%, rgba(180, 120, 255, .22), transparent 60%),
+    radial-gradient(900px 420px at 88% 22%, rgba(130, 220, 255, .16), transparent 55%),
+    linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.70)),
+    url("hero.webp") center / cover no-repeat;
   filter:saturate(1.05);
 }
 .hero__inner{
@@ -185,12 +213,26 @@ position:relative;
 }
 .feature__icon{ color:var(--accent); margin-bottom:6px; }
 
-.video video{
-  width:100%;
-  height:auto;
-  border-radius:14px;
-  background:#000;
+.video__frame{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
 }
+.video__frame iframe{
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.video__links{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
 
 .split{
   display:grid;
@@ -308,16 +350,16 @@ position:relative;
     min-width: 0;
     padding: 14px 16px;
   }
-  
-  #about .features{ gap: 0; }
+
+  /* About 内の feature を 1カラムでカードとして表示 */
+  #about .features{ gap: 12px; }
   #about .feature{
-    border: 0;
-    background: transparent;
-    padding: 14px 0;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: rgba(255,255,255,0.04);
+    padding: 14px 14px;
+    border-radius: 16px;
   }
-  #about .feature + .feature{
-    border-top: 1px solid rgba(255,255,255,0.10);
-  }
+  #about .feature + .feature{ border-top: 0; }
   
   .section{ padding: 32px 0; }
   
@@ -336,4 +378,8 @@ position:relative;
     color: var(--muted); line-height: 1.7; 
     margin: 6px 0 0;
   }
+
+  .brand__logo{ height: 20px; }
+  .title__logo{ width: min(92vw, 420px); }
+
 }
