@@ -349,7 +349,7 @@ position:relative;
 
   /* 追加：ヒーローを目立たせる */
   .hero{
-    padding: 22px 0 20px;
+    padding: 22px 0 14px;
   }
 
   .hero__inner{ 
