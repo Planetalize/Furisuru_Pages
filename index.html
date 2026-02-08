@@ -96,15 +96,29 @@
               allowfullscreen>
             </iframe>
             </div>
+            <!-- 2) ボタンカード群（横並び） -->
+             <div class="pv-actions">
+              <div class="card pv-action-card">
+                <a class="btn-link"
+                href="https://www.youtube.com/watch?v=8nMypyx695M"
+                target="_blank" rel="noopener"
+                data-embed="https://www.youtube.com/embed/8nMypyx695M">
+                YouTubeで見る
+              </a>
+              <p class="pv-action-help">埋め込みが表示されない場合はこのリンクから。</p>
+            </div>
+            <div class="card pv-action-card">
+              <!-- 配信枠：後述の“埋め込みURL”に差し替えてください -->
+               <a class="btn-link"
+               href="https://www.youtube.com/"
+               target="_blank" rel="noopener"
+               data-embed="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID">
+               配信枠を見る
+              </a>
+              <p class="pv-action-help">配信中なら埋め込み再生に切り替えます。</p>
+            </div>
           </div>
-          <p class="note">操作と雰囲気が伝わる短いPVが最強。</p>
-          <div class="video__links">
-            <a class="btn btn--ghost" href="https://www.youtube.com/live/8nMypyx695M" target="_blank" rel="noopener">YouTubeで見る</a>
-            <a class="btn btn--primary" href="https://www.youtube.com/live/LIVE_ID" target="_blank" rel="noopener">配信枠を見る</a>
-          </div>
-          <p class="note">公開前なら、リンクだけ後で差し替えればOK。</p>
         </div>
-
       </div>
     </section>
 
@@ -143,6 +157,40 @@
       </div>
     </footer>
   </main>
+  
+  <!-- 1) 埋め込みプレイヤー -->
+  <script>
+  (function(){
+    const player = document.getElementById("pvPlayer");
+    if(!player) return;
+
+    // “ボタンカード”のリンクを拾う
+    const links = document.querySelectorAll(".pv-actions a[data-embed]");
+
+    links.forEach(a => {
+      a.addEventListener("click", (e) => {
+        // 1) クリックで埋め込みを切り替える（同時にYouTubeへ飛ばさない）
+        //    ネットワーク制限などで埋め込みがダメなら、ユーザーは長押し/別タブでYouTubeを開ける
+        e.preventDefault();
+
+        const embed = a.getAttribute("data-embed");
+        if(!embed) return;
+
+        // autoplayは端末/ブラウザ制限があるのでクリック時のみ付ける
+        const url = new URL(embed);
+        url.searchParams.set("autoplay", "1");
+
+        // iOS/Safariで自動再生を通しやすくする場合（必要なら）
+        // url.searchParams.set("mute", "1");
+
+        player.src = url.toString();
+
+        // 視線誘導：プレイヤーまでスクロール
+        player.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    });
+  })();
+</script>
 </body>
 
 </html>

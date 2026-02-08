@@ -213,13 +213,16 @@ position:relative;
 }
 .feature__icon{ color:var(--accent); margin-bottom:6px; }
 
+/* YouTube iframeを動画っぽく扱う */
 .video__frame{
-  width: 100%;
+  width:100%;
   aspect-ratio: 16 / 9;
-  border-radius: 18px;
-  overflow: hidden;
-  background: #000;
+  border-radius:14px;
+  background:#000;
+  border:0;
+  display:block;
 }
+
 .video__frame iframe{
   width: 100%;
   height: 100%;
@@ -231,6 +234,43 @@ position:relative;
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 12px;
+}
+
+/* ボタンカードを横並びに */
+.pv-actions{
+  margin-top:12px;
+  display:flex;
+  gap:12px;
+}
+
+.pv-action-card{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* ボタンの見た目（既存btnを流用してもOK） */
+.btn-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 16px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,0.06);
+}
+
+/* 既存のbtn--primary相当の強調が欲しければ */
+.btn-link:hover{
+  filter:brightness(1.08);
+}
+
+.pv-action-help{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.5;
 }
 
 
