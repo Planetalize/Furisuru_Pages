@@ -82,45 +82,53 @@
     </section>
 
     <!-- PV -->
-    <section id="movie" class="section">
-      <div class="container">
-        <h2 class="section-title"><span>ゲーム紹介動画</span></h2>
-        <div class="card">
-          <div class="video">
-            <div class="video__frame">
-              <iframe
-              src="https://www.youtube.com/embed/8nMypyx695M"
-              title="ふりするフリスル PV"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-            </div>
-            <!-- 2) ボタンカード群（横並び） -->
-             <div class="pv-actions">
-              <div class="card pv-action-card">
-                <a class="btn-link"
-                href="https://www.youtube.com/watch?v=8nMypyx695M"
-                target="_blank" rel="noopener"
-                data-embed="https://www.youtube.com/embed/8nMypyx695M">
-                YouTubeで見る
-              </a>
-              <p class="pv-action-help">埋め込みが表示されない場合はこのリンクから。</p>
-            </div>
-            <div class="card pv-action-card">
-              <!-- 配信枠：後述の“埋め込みURL”に差し替えてください -->
-               <a class="btn-link"
-               href="https://www.youtube.com/"
-               target="_blank" rel="noopener"
-               data-embed="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID">
-               配信枠を見る
-              </a>
-              <p class="pv-action-help">配信中なら埋め込み再生に切り替えます。</p>
-            </div>
-          </div>
+     <!-- PV -->
+<section id="movie" class="section">
+  <div class="container">
+    <h2 class="section-title"><span>ゲーム紹介動画</span></h2>
+
+    <div class="card pv-card">
+      <!-- メインプレイヤー -->
+      <div class="pv-player" data-current="8nMypyx695M">
+        <div class="video__frame pv-embed">
+          <iframe
+            id="pvPlayer"
+            src="https://www.youtube.com/embed/8nMypyx695M?rel=0&modestbranding=1&playsinline=1"
+            title="ふりするフリスル PV"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
         </div>
+
+        <!-- クリックで消える再生ボタンUI（オーバーレイ） -->
+        <button class="pv-overlay" type="button" aria-label="再生">
+          <span class="pv-overlay__btn" aria-hidden="true"></span>
+        </button>
       </div>
-    </section>
+      </div>
+
+      <!-- 下部サムネ列（例：3本） -->
+      <div class="pv-thumbs" aria-label="動画一覧">
+        <button class="pv-thumb js-switch is-active" type="button" data-video="8nMypyx695M" data-title="メインPV">
+          <img src="https://i.ytimg.com/vi/8nMypyx695M/hqdefault.jpg" alt="">
+          <span class="pv-thumb__title">メインPV</span>
+        </button>
+
+        <button class="pv-thumb js-switch" type="button" data-video="VIDEO_ID_2" data-title="プレイ映像">
+          <img src="https://i.ytimg.com/vi/VIDEO_ID_2/hqdefault.jpg" alt="">
+          <span class="pv-thumb__title">プレイ映像</span>
+        </button>
+
+        <button class="pv-thumb js-switch" type="button" data-video="VIDEO_ID_3" data-title="配信枠">
+          <img src="https://i.ytimg.com/vi/VIDEO_ID_3/hqdefault.jpg" alt="">
+          <span class="pv-thumb__title">配信枠</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- キャラクター -->
     <section id="chara" class="section">
@@ -160,36 +168,50 @@
   
   <!-- 1) 埋め込みプレイヤー -->
   <script>
-  (function(){
-    const player = document.getElementById("pvPlayer");
-    if(!player) return;
+(() => {
+  const iframe = document.getElementById("pvPlayer");
+  const playerWrap = document.querySelector(".pv-player");
+  const overlay = document.querySelector(".pv-overlay");
+  const switches = document.querySelectorAll(".js-switch");
 
-    // “ボタンカード”のリンクを拾う
-    const links = document.querySelectorAll(".pv-actions a[data-embed]");
+  if (!iframe || !playerWrap) return;
 
-    links.forEach(a => {
-      a.addEventListener("click", (e) => {
-        // 1) クリックで埋め込みを切り替える（同時にYouTubeへ飛ばさない）
-        //    ネットワーク制限などで埋め込みがダメなら、ユーザーは長押し/別タブでYouTubeを開ける
-        e.preventDefault();
+  function setVideo(videoId, autoplay) {
+    if (!videoId) return;
 
-        const embed = a.getAttribute("data-embed");
-        if(!embed) return;
+    playerWrap.dataset.current = videoId;
 
-        // autoplayは端末/ブラウザ制限があるのでクリック時のみ付ける
-        const url = new URL(embed);
-        url.searchParams.set("autoplay", "1");
+    const url = new URL(`https://www.youtube.com/embed/${videoId}`);
+    url.searchParams.set("rel", "0");
+    url.searchParams.set("modestbranding", "1");
+    url.searchParams.set("playsinline", "1");
+    if (autoplay) url.searchParams.set("autoplay", "1");
 
-        // iOS/Safariで自動再生を通しやすくする場合（必要なら）
-        // url.searchParams.set("mute", "1");
+    iframe.src = url.toString();
 
-        player.src = url.toString();
+    // オーバーレイを消す
+    playerWrap.classList.add("is-playing");
 
-        // 視線誘導：プレイヤーまでスクロール
-        player.scrollIntoView({ behavior: "smooth", block: "center" });
-      });
+    // アクティブサムネ更新
+    document.querySelectorAll(".pv-thumb.is-active").forEach(el => el.classList.remove("is-active"));
+    const activeThumb = document.querySelector(`.pv-thumb[data-video="${CSS.escape(videoId)}"]`);
+    if (activeThumb) activeThumb.classList.add("is-active");
+  }
+
+  // まずはオーバーレイクリックで「現在の動画」を再生
+  overlay?.addEventListener("click", () => {
+    setVideo(playerWrap.dataset.current, true);
+  });
+
+  // サムネ/ボタンをクリックしたらメインに差し替えて再生
+  switches.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const videoId = btn.getAttribute("data-video");
+      setVideo(videoId, true);
+      iframe.scrollIntoView({ behavior: "smooth", block: "center" });
     });
-  })();
+  });
+})();
 </script>
 </body>
 

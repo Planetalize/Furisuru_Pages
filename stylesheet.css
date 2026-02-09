@@ -221,6 +221,7 @@ position:relative;
   background:#000;
   border:0;
   display:block;
+  overflow: hidden;
 }
 
 .video__frame iframe{
@@ -271,6 +272,100 @@ position:relative;
   color:var(--muted);
   font-size:13px;
   line-height:1.5;
+}
+
+/* PVカード内の構成 */
+.pv-card{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-bottom: 12px;
+}
+
+/* メインプレイヤー＋オーバーレイ */
+.pv-player{
+  position:relative;
+}
+.pv-player.is-playing .pv-overlay{
+  opacity:0;
+  pointer-events:none;
+}
+
+.pv-overlay{
+  position:absolute;
+  inset:0;
+  border:0;
+  background:linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.35));
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+}
+.pv-overlay__btn{
+  width:72px;
+  height:72px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.22);
+  background:rgba(12,8,18,0.45);
+  backdrop-filter: blur(8px);
+  position:relative;
+}
+.pv-overlay__btn::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-42%,-50%);
+  border-left:20px solid rgba(255,255,255,0.9);
+  border-top:12px solid transparent;
+  border-bottom:12px solid transparent;
+}
+
+/* 2枚のボタンカード（横並び） */
+.pv-actions{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px;
+}
+.pv-action-card{
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:12px;
+  background:rgba(255,255,255,0.04);
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.pv-open{
+  color:var(--muted);
+  font-size:13px;
+  text-decoration:underline;
+}
+
+/* サムネ一覧 */
+.pv-thumbs{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:12px;
+}
+.pv-thumb{
+  padding:0;
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:rgba(255,255,255,0.04);
+  overflow:hidden;
+  cursor:pointer;
+  text-align:left;
+}
+.pv-thumb img{ width:100%; display:block; }
+.pv-thumb__title{
+  display:block;
+  padding:10px 12px;
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.4;
+}
+.pv-thumb.is-active{
+  border-color: rgba(212,140,255,0.45);
 }
 
 
