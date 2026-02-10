@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="140" viewBox="0 0 640 140">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a0f3a"></stop>
+      <stop offset="1" stop-color="#5b1f50"></stop>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="640" height="140" rx="18" fill="url(#g)"></rect>
+  <rect x="14" y="14" width="612" height="112" rx="14" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2"></rect>
+  <circle cx="320" cy="70" r="6" fill="#d48cff"></circle>
+  <text x="320" y="86" text-anchor="middle" font-size="52" font-family="sans-serif" fill="#ffffff">メインPV</text>
+</svg>

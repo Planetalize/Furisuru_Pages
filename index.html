@@ -15,8 +15,8 @@
         <img class="brand__logo" src="logo.svg" alt="ふりするフリスル">
       </a>
       <nav class="nav">
-        <a href="#about">ゲーム紹介</a>
         <a href="#movie">PV</a>
+        <a href="#about">ゲーム紹介</a>
         <a href="#chara">キャラクター</a>
         <a href="#access">会場アクセス</a>
       </nav>
@@ -43,6 +43,81 @@
         <span class="scroll-hint__chev" aria-hidden="true"></span>
       </a>
     </section>
+
+        <!-- PV -->
+<section id="movie" class="section">
+  <div class="container">
+    <h2 class="section-title"><span>ゲーム紹介動画</span></h2>
+
+    <div class="card pv-card">
+      <!-- メインプレイヤー -->
+      <div class="pv-player" data-current="8nMypyx695M">
+        <div class="video__frame pv-embed">
+          <iframe
+            id="pvPlayer"
+            src="https://www.youtube.com/embed/8nMypyx695M?rel=0&modestbranding=1&playsinline=1"
+            title="ふりするフリスル PV"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <!-- クリックで消える再生ボタンUI（オーバーレイ） -->
+        <button class="pv-overlay" type="button" aria-label="再生">
+          <span class="pv-overlay__btn" aria-hidden="true"></span>
+        </button>
+      </div>
+      </div>
+
+      <!-- 下部サムネ列（例：3本） -->
+       <div class="pv-thumbs" aria-label="動画一覧">
+  <button class="pv-thumb js-switch is-active" type="button"
+          data-video="8nMypyx695M" aria-pressed="true">
+    <span class="pv-thumb__media">
+      <img
+        src="https://i.ytimg.com/vi/8nMypyx695M/mqdefault.jpg"
+        srcset="https://i.ytimg.com/vi/8nMypyx695M/maxresdefault.jpg 1280w,
+                https://i.ytimg.com/vi/8nMypyx695M/mqdefault.jpg 320w"
+        sizes="(max-width: 860px) 33vw, 300px"
+        alt="メインPV サムネイル"
+        loading="lazy">
+    </span>
+    <img class="pv-thumb__banner" src="thumb_mainpv.svg" alt="メインPV">
+  </button>
+
+  <button class="pv-thumb js-switch" type="button"
+          data-video="VIDEO_ID_2" aria-pressed="false">
+    <span class="pv-thumb__media">
+      <img
+        src="https://i.ytimg.com/vi/VIDEO_ID_2/mqdefault.jpg"
+        srcset="https://i.ytimg.com/vi/VIDEO_ID_2/maxresdefault.jpg 1280w,
+                https://i.ytimg.com/vi/VIDEO_ID_2/mqdefault.jpg 320w"
+        sizes="(max-width: 860px) 33vw, 300px"
+        alt="プレイ映像 サムネイル"
+        loading="lazy">
+    </span>
+    <img class="pv-thumb__banner" src="thumb_play.svg" alt="プレイ映像">
+  </button>
+
+  <button class="pv-thumb js-switch" type="button"
+          data-video="VIDEO_ID_3" aria-pressed="false">
+    <span class="pv-thumb__media">
+      <img
+        src="https://i.ytimg.com/vi/VIDEO_ID_3/mqdefault.jpg"
+        srcset="https://i.ytimg.com/vi/VIDEO_ID_3/maxresdefault.jpg 1280w,
+                https://i.ytimg.com/vi/VIDEO_ID_3/mqdefault.jpg 320w"
+        sizes="(max-width: 860px) 33vw, 300px"
+        alt="配信枠 サムネイル"
+        loading="lazy">
+    </span>
+    <img class="pv-thumb__banner" src="thumb_stream.svg" alt="配信枠">
+  </button>
+</div>
+
+    </div>
+  </div>
+</section>
 
     <!-- ゲーム紹介 -->
     <section id="about" class="section">
@@ -80,54 +155,6 @@
         </div>
       </div>
     </section>
-
-    <!-- PV -->
-     <!-- PV -->
-<section id="movie" class="section">
-  <div class="container">
-    <h2 class="section-title"><span>ゲーム紹介動画</span></h2>
-
-    <div class="card pv-card">
-      <!-- メインプレイヤー -->
-      <div class="pv-player" data-current="8nMypyx695M">
-        <div class="video__frame pv-embed">
-          <iframe
-            id="pvPlayer"
-            src="https://www.youtube.com/embed/8nMypyx695M?rel=0&modestbranding=1&playsinline=1"
-            title="ふりするフリスル PV"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-
-        <!-- クリックで消える再生ボタンUI（オーバーレイ） -->
-        <button class="pv-overlay" type="button" aria-label="再生">
-          <span class="pv-overlay__btn" aria-hidden="true"></span>
-        </button>
-      </div>
-      </div>
-
-      <!-- 下部サムネ列（例：3本） -->
-      <div class="pv-thumbs" aria-label="動画一覧">
-        <button class="pv-thumb js-switch is-active" type="button" data-video="8nMypyx695M" data-title="メインPV">
-          <img src="https://i.ytimg.com/vi/8nMypyx695M/hqdefault.jpg" alt="">
-          <span class="pv-thumb__title">メインPV</span>
-        </button>
-
-        <button class="pv-thumb js-switch" type="button" data-video="VIDEO_ID_2" data-title="プレイ映像">
-          <img src="https://i.ytimg.com/vi/VIDEO_ID_2/hqdefault.jpg" alt="">
-          <span class="pv-thumb__title">プレイ映像</span>
-        </button>
-
-        <button class="pv-thumb js-switch" type="button" data-video="VIDEO_ID_3" data-title="配信枠">
-          <img src="https://i.ytimg.com/vi/VIDEO_ID_3/hqdefault.jpg" alt="">
-          <span class="pv-thumb__title">配信枠</span>
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
 
 
     <!-- キャラクター -->
@@ -167,14 +194,22 @@
   </main>
   
   <!-- 1) 埋め込みプレイヤー -->
-  <script>
+<script>
 (() => {
   const iframe = document.getElementById("pvPlayer");
   const playerWrap = document.querySelector(".pv-player");
   const overlay = document.querySelector(".pv-overlay");
-  const switches = document.querySelectorAll(".js-switch");
+  const switches = Array.from(document.querySelectorAll(".js-switch"));
 
-  if (!iframe || !playerWrap) return;
+  if (!iframe || !playerWrap || switches.length === 0) return;
+
+  function setActive(videoId) {
+    switches.forEach(btn => {
+      const isActive = btn.dataset.video === videoId;
+      btn.classList.toggle("is-active", isActive);
+      btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+  }
 
   function setVideo(videoId, autoplay) {
     if (!videoId) return;
@@ -189,24 +224,25 @@
 
     iframe.src = url.toString();
 
-    // オーバーレイを消す
+    // 再生UI（オーバーレイ）を消す
     playerWrap.classList.add("is-playing");
 
-    // アクティブサムネ更新
-    document.querySelectorAll(".pv-thumb.is-active").forEach(el => el.classList.remove("is-active"));
-    const activeThumb = document.querySelector(`.pv-thumb[data-video="${CSS.escape(videoId)}"]`);
-    if (activeThumb) activeThumb.classList.add("is-active");
+    // 選択サムネを強調
+    setActive(videoId);
   }
 
-  // まずはオーバーレイクリックで「現在の動画」を再生
+  // 初期状態の選択を揃える（HTMLの is-active と data-current の不一致対策）
+  setActive(playerWrap.dataset.current);
+
+  // オーバーレイクリックで現在の動画を再生
   overlay?.addEventListener("click", () => {
     setVideo(playerWrap.dataset.current, true);
   });
 
-  // サムネ/ボタンをクリックしたらメインに差し替えて再生
+  // サムネクリックでメイン差し替え＋再生
   switches.forEach(btn => {
     btn.addEventListener("click", () => {
-      const videoId = btn.getAttribute("data-video");
+      const videoId = btn.dataset.video;
       setVideo(videoId, true);
       iframe.scrollIntoView({ behavior: "smooth", block: "center" });
     });
