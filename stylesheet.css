@@ -26,7 +26,7 @@
 html,body{ margin:0; padding:0; }
 body{
   color:#fff;
-  background-color: #81211a;
+  background-color: #0e0d0f;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -175,22 +175,19 @@ img{ max-width:100%; height:auto; display:block; }
   border:1px solid var(--border);
   border-radius:18px;
   padding:16px;
-  box-shadow: 0 0px 3px rgba(0,0,0,0.35);
+  box-shadow: 0 0px 3px rgb(255, 255, 255);
 position:relative;
   overflow:hidden;
 }
 .card--link:hover{
-  background:rgba(255,255,255,0.06);
-  border-color:rgba(212,140,255,0.35);
+  background:rgba(255, 255, 255, 0.06);
+  border-color:rgb(255, 210, 87);
 }
 
 .card::before{
   content:"";
   position:absolute;
   inset:0;
-  background:
-    radial-gradient(600px 260px at 20% 0%, rgba(200,140,255,0.16), transparent 60%),
-    url("bg.webp") center/cover no-repeat;
   opacity:0.35;
   filter: blur(0px) saturate(1.1);
   pointer-events:none;
@@ -206,7 +203,7 @@ position:relative;
   gap:12px;
 }
 .feature{
-  background:rgba(255,255,255,0.04);
+  background:rgba(255, 255, 255, 0.04);
   border:1px solid var(--border);
   border-radius:14px;
   padding:12px;
@@ -325,12 +322,13 @@ position:relative;
   display:grid;
   grid-template-columns: repeat(3, 1fr);
   gap:12px;
+  padding-top: 10px;
 }
 .pv-thumb{
   padding:0;
   border:1px solid var(--border);
   border-radius:16px;
-  background:rgba(255,255,255,0.04);
+  background:rgba(255, 255, 255, 0.04);
   overflow:hidden;
   cursor:pointer;
   text-align:left;
@@ -344,6 +342,10 @@ position:relative;
   aspect-ratio: 16 / 9;
   background:#000;
   overflow:hidden;
+
+  /* 追加 */
+  border:2px solid transparent;
+  border-radius:16px 16px 16px 16px;  /* 上だけ丸める（バナーと分離するため） */
 }
 
 .pv-thumb__media img{
@@ -353,21 +355,19 @@ position:relative;
   object-fit: cover;
 }
 
-/* タイトル画像バナー */
-.pv-thumb__banner{
+/* 選択中の強調（枠色＋外側の光） */
+.pv-thumb.is-active .pv-thumb__media{
+  border-color: rgb(255, 210, 87);
+    box-shadow:
+    0 0 0 3px rgb(250, 226, 93),
+    0 0 12px 4px rgba(225,210,87,0.6) inset;
+}
+
+.pv-banner{
   width:100%;
   height:auto;
   display:block;
 }
-
-/* 選択中の強調（枠色＋外側の光） */
-.pv-thumb.is-active{
-  border-color: rgba(212,140,255,0.70);
-  box-shadow:
-    0 0 0 2px rgba(212,140,255,0.35),
-    0 18px 40px rgba(0,0,0,0.35);
-}
-
 
 .split{
   display:grid;
