@@ -12,7 +12,7 @@
 --------------------------------------------------------*/
 
 :root{
-  --bg:#1c122e;
+  --bg:#3E433D;
   --panel:rgba(20,14,30,0.70);
   --panel2:rgba(44,34,62,0.80);
   --text:#ffffff;
@@ -26,7 +26,7 @@
 html,body{ margin:0; padding:0; }
 body{
   color:#fff;
-  background-color: #0e0d0f;
+  background-color: var(--bg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -53,7 +53,7 @@ img{ max-width:100%; height:auto; display:block; }
 }
 
 .brand__logo{
-  height: 24px;
+  height: 48px;
   width: auto;
   display: block;
   filter: drop-shadow(0 6px 14px rgba(0,0,0,.35));
@@ -165,13 +165,14 @@ img{ max-width:100%; height:auto; display:block; }
   transform:translate(-50%,-50%);
   width:min(680px, 92vw);
   height:78px;
-  background:url("frame_section.svg") center/contain no-repeat;
+  background:url("frame_section.png") center/contain no-repeat;
   opacity:0.95;
   pointer-events:none;
 }
 
 .card{
   background:var(--panel);
+  background-color: rgb(120, 131, 123);
   border:1px solid var(--border);
   border-radius:18px;
   padding:16px;
