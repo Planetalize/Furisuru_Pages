@@ -113,7 +113,7 @@ img{ max-width:100%; height:auto; display:block; }
     radial-gradient(1200px 520px at 12% 8%, rgba(180, 120, 255, .22), transparent 60%),
     radial-gradient(900px 420px at 88% 22%, rgba(130, 220, 255, .16), transparent 55%),
     linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.70)),
-    url("hero.webg") center / cover no-repeat;
+    url("hero.webp") center / cover no-repeat;
   filter:saturate(1.05);
 }
 .hero__inner{
@@ -370,7 +370,7 @@ position:relative;
     0 0 12px 4px rgba(225,210,87,0.6) inset;
 }
 
-.pv-banner{
+.pv-thumb__banner{
   width:100%;
   height:auto;
   display:block;
@@ -438,8 +438,6 @@ position:relative;
   html{ scroll-behavior: smooth; }
 }
 
-
-
 /* スマホ最適化 */
 @media (max-width: 860px){
   /* 既存 */
@@ -479,6 +477,10 @@ position:relative;
 
   .subcatch{
     font-size: 14px;
+  }
+
+  .pv-thumbs { 
+    grid-template-columns: repeat(2,1fr); 
   }
 
   .cta{
