@@ -479,10 +479,6 @@ position:relative;
     font-size: 14px;
   }
 
-  .pv-thumbs { 
-    grid-template-columns: repeat(2,1fr); 
-  }
-
   .cta{
     display: flex;
     flex-direction: column;
