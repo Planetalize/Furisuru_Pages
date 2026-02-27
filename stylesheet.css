@@ -178,7 +178,7 @@ img{ max-width:100%; height:auto; display:block; }
 
 .card{
   background:var(--panel);
-  background-color: rgb(120, 131, 123);
+  background-color: rgb(49, 54, 50);
   border:1px solid var(--border);
   border-radius:18px;
   padding:16px;
