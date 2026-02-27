@@ -113,7 +113,7 @@ img{ max-width:100%; height:auto; display:block; }
     radial-gradient(1200px 520px at 12% 8%, rgba(180, 120, 255, .22), transparent 60%),
     radial-gradient(900px 420px at 88% 22%, rgba(130, 220, 255, .16), transparent 55%),
     linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.70)),
-    url("hero.webp") center / cover no-repeat;
+    url("hero.png") center / cover no-repeat;
   filter:saturate(1.05);
 }
 .hero__inner{
@@ -449,7 +449,7 @@ position:relative;
 
   /* 追加：ヒーローを目立たせる */
   .hero{
-    padding: 22px 0 14px;
+    padding: 22px 0 22px;
   }
 
   .hero__inner{ 
