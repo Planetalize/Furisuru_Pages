@@ -429,6 +429,69 @@ position:relative;
   object-fit:cover;
 }
 
+/* 呼び出しセクション：2カード構成 */
+.call-grid{
+  display:grid;
+  grid-template-columns: 1fr 0.95fr;
+  gap:16px;
+  align-items:start;
+}
+
+.call-notes{
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.call-status{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  background:
+    radial-gradient(600px 180px at 50% -20%, rgba(243, 255, 140, 0.16), transparent 60%),
+    rgba(49, 54, 50, 0.95);
+}
+
+.call-status__label{
+  margin:0;
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: 0.06em;
+}
+
+.call-status__number{
+  margin:0;
+  font-size: clamp(36px, 7vw, 64px);
+  line-height: 1;
+  color: #fff4c8;
+  text-shadow: 0 0 12px rgba(255, 210, 87, 0.25);
+}
+
+.call-status__subgrid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:10px;
+}
+
+.call-mini{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:10px 12px;
+  background: rgba(255,255,255,0.03);
+}
+
+.call-mini__label{
+  margin:0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.call-mini__value{
+  margin:4px 0 0;
+  font-size: 22px;
+  line-height: 1.2;
+}
 
 /* スクロール誘導（ヒーロー下の矢印） */
 .scroll-hint{
@@ -552,5 +615,18 @@ position:relative;
 
   .brand__logo{ height: 20px; }
   .title__logo{ width: min(92vw, 420px); }
+
+    .access-layout{
+    grid-template-columns: 1fr;
+  }
+
+  .call-grid{
+    grid-template-columns: 1fr;
+  }
+
+  /* 数字カードを先に見せたいなら */
+  .call-status{
+    order: -1;
+  }
 
 }
