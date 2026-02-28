@@ -399,6 +399,37 @@ position:relative;
   border-top:1px solid var(--border);
 }
 
+/* 会場案内：左テキスト / 右マップ */
+.access-layout{
+  display:grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap:16px;
+  align-items:start;
+}
+
+.access__text .lead{
+  margin: 0 0 10px;
+}
+
+.access__text .note{
+  margin-top: 8px;
+}
+
+.access__map{
+  border:1px solid var(--border);
+  border-radius:14px;
+  overflow:hidden;
+  background: rgba(255,255,255,0.03);
+}
+
+.access__map img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:cover;
+}
+
+
 /* スクロール誘導（ヒーロー下の矢印） */
 .scroll-hint{
   position:absolute;
