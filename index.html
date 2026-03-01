@@ -21,6 +21,8 @@
         <a href="#about">ゲーム紹介</a>
         <a href="#chara">キャラクター</a>
         <a href="#access">会場アクセス</a>
+        <!-- <a href="#call">呼び出し</a> -->
+        <a href="#download">ダウンロード</a>
       </nav>
       </div>
     </div>
@@ -41,7 +43,7 @@
         </div>
       </div>
       </div>
-      <a class="scroll-hint" href="#about" aria-label="下へスクロール">
+      <a class="scroll-hint" href="#download" aria-label="下へスクロール">
         <span class="scroll-hint__chev" aria-hidden="true"></span>
       </a>
     </section>
@@ -53,11 +55,11 @@
 
     <div class="card pv-card">
       <!-- メインプレイヤー -->
-      <div class="pv-player" data-current="cSno7JpctqU">
+      <div class="pv-player" data-current="k9iTbm3f8bg">
         <div class="video__frame pv-embed">
           <iframe
             id="pvPlayer"
-            src="https://www.youtube.com/embed/cSno7JpctqU?rel=0&modestbranding=1&playsinline=1"
+            src="https://www.youtube.com/embed/k9iTbm3f8bg?rel=0&modestbranding=1&playsinline=1"
             title="ふりするフリスル PV"
             loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -75,12 +77,12 @@
       <!-- 下部サムネ列（例：3本） -->
     <div class="pv-thumbs" aria-label="動画一覧">
       <button class="pv-thumb js-switch is-active" type="button"
-              data-video="cSno7JpctqU" aria-pressed="true">
+              data-video="k9iTbm3f8bg" aria-pressed="true">
         <span class="pv-thumb__media">
           <img
-            src="https://i.ytimg.com/vi/cSno7JpctqU/mqdefault.jpg"
-            srcset="https://i.ytimg.com/vi/cSno7JpctqU/maxresdefault.jpg 1280w,
-                    https://i.ytimg.com/vi/cSno7JpctqU/mqdefault.jpg 320w"
+            src="https://i.ytimg.com/vi/k9iTbm3f8bg/mqdefault.jpg"
+            srcset="https://i.ytimg.com/vi/k9iTbm3f8bg/maxresdefault.jpg 1280w,
+                    https://i.ytimg.com/vi/k9iTbm3f8bg/mqdefault.jpg 320w"
             sizes="(max-width: 860px) 33vw, 300px"
             alt="メインPV サムネイル"
             loading="lazy">
@@ -191,7 +193,7 @@
         <div class="card access-card">
           <div class="access-layout">
             <div class="access__text">
-              <h1 class="lead">HAL EVENT WEEK-進級制作展</h1>
+              <h2 class="lead">HAL EVENT WEEK-進級制作展</h2>
               <h2 class="lead">日時：2026/03/05　10:00～17:00</h2>
               <h2 class="lead">会場：HAL東京　31F</h2>
               <h2 class="lead">ブース番号：GM42-029</h2>
@@ -239,6 +241,53 @@
         </div>
       </div>
     </section> -->
+
+    <!-- ダウンロード -->
+    <section id="download" class="section">
+      <div class="container">
+        <h2 class="section-title"><span>ダウンロード</span></h2>
+
+        <div class="download-grid">
+          <!-- メインのDLカード -->
+          <div class="card download-card">
+            <div class="download-card__main">
+              <div class="download-card__text">
+                <h2 class="lead">ふりするフリスル（Windows版）</h2>
+                <p class="note">こちらからダウンロードして遊べます。</p>
+                <ul class="download-meta">
+                  <li>形式：ZIP</li>
+                  <li>対応OS：Windows</li>
+                  <li>バージョン：ver1.0.0</li>
+                  <!-- 分かれば追記 -->
+                  <!-- <li>容量：約120MB</li> -->
+                </ul>
+              </div>
+
+              <div class="download-card__actions">
+                <a class="download-btn"
+                  href="D:\旧ドキュメント\Furisuru_ver1.0.0.zip"
+                  download="Furisuru_ver1.0.0.zip">
+                  ゲームをダウンロード
+                </a>
+
+                <!-- 任意：ZIPが開かれた時の保険用 -->
+                <p class="note">ダウンロードが始まらない場合は、リンクを長押し/右クリックして保存してください。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 任意：補足カード（README / 操作説明 など） -->
+          <div class="card download-subcard">
+            <h3 class="lead">遊ぶ前に</h3>
+            <ul class="download-meta">
+              <li>解凍してから実行してください</li>
+              <li>セキュリティ警告が出る場合は内容を確認の上で実行</li>
+              <li>不具合時は会場でお知らせください</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <footer class="footer">
       <div class="container">
