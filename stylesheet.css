@@ -215,7 +215,25 @@ position:relative;
   border-radius:14px;
   padding:12px;
 }
-.feature__icon{ color:var(--accent); margin-bottom:6px; }
+
+.feature__media{
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.feature__media img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* 本文側をしっかり伸ばす（横幅圧迫を防ぐ） */
+.feature__body{
+  flex: 1;
+  min-width: 0;
+}
 
 /* YouTube iframeを動画っぽく扱う */
 .video__frame{
@@ -662,7 +680,31 @@ position:relative;
     gap: 10px;
     align-items: flex-start;
   }
-  .feature__icon{ margin-top: 2px; line-height: 1; }
+
+    #about .feature{
+    display: flex;
+    gap: 12px;
+    align-items: center; /* start でもOKだが center の方が安定しやすい */
+  }
+
+  /* アイコン枠のサイズを固定する */
+  #about .feature__media{
+    flex: 0 0 88px;
+    width: 88px;
+    height: 88px;
+    margin: 0;
+  }
+
+  #about .feature__body h3{
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.35;
+  }
+
+  #about .feature__body p{
+    margin: 6px 0 0;
+    line-height: 1.6;
+  }
   
   .feature__body h3{ 
     font-size:18px; letter-spacing:0.02em; 
